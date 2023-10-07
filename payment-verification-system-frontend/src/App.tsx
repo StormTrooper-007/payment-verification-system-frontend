@@ -1,43 +1,37 @@
-import { useEffect, useState } from "react";
-
+//import { useEffect, useState } from 'react';
+import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
+import Protected from './pages/Protected';
+import Root from './pages/Root';
+import Login from './pages/Login';
+import Home from './pages/Home';
+import Checkout from './pages/Checkout';
 
 
 function App() {
-  const [messages, setMessages] = useState<string[]>([]);
-  const [text, setText] = useState<string>("");
-  const [websocket, setWebSocket] = useState<WebSocket>();
 
  
 
-  useEffect(() => {
-    const ws = new WebSocket("ws://localhost:8081/ws")
-    setWebSocket(ws);
-  
-    ws.onmessage = (event) => {
-      setMessages((prev) => [...prev, event.data])
-    }
-
-  
-
-  },[])
-
-  function sendMessage(){
-    websocket?.send(text);
-    setText("");
-    console.log(text)
-  }
-
- 
-  return (
-    <>
-   <div>Display</div>
-   {messages.map((message , index)=> (
-    <div key={index}>{message}</div>
-   ))}
-   <input type="text" onChange={(e) => setText(e.target.value)}/>
-   <button onClick={sendMessage}>send</button>
-    </>
-  )
+const router = createBrowserRouter(
+createRoutesFromElements(
+  <>
+  <Route element={<Root/>}>
+    <Route element={<Protected/>}>
+    <Route path="/" element={<Home/>}></Route>
+    <Route path="/checkout/:id" element={<Checkout/>}></Route>
+     
+    </Route>
+  </Route>
+  <Route>
+    <Route path="/login" element = {<Login/>}></Route>
+  </Route>
+  </>
+)
+ )
+ return (
+  <div>
+    <RouterProvider router={router}/>
+  </div>
+ )
 }
 
 export default App
