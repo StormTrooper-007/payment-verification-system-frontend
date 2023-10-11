@@ -7,7 +7,10 @@ export default function Protected() {
 
     function getUser(){
         axios.get("/api/users/me")
-        .then((response) => setUser(response.data))
+        .then((response) => {
+            setUser(response.data)
+            console.log(response.data)
+        })
         .catch((error) => console.log(error.response.message))
     }
 

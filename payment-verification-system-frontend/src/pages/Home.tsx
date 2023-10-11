@@ -4,7 +4,7 @@ import {data} from "../data";
 
 
 export default function Home() {
-    
+
   return (
     <Box sx={{m:2}}>
       <Box sx={{ flexGrow: 1 }}>

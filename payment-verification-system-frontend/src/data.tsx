@@ -1,4 +1,11 @@
-export const data = [
+export type Data = {
+    id:string,
+    name:string,
+    price:number,
+    photo:string
+  }
+
+export const data:Data[]= [
     {
     id:"1",
     name: "Shoe",

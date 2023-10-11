@@ -1,4 +1,3 @@
-//import { useEffect, useState } from 'react';
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
 import Protected from './pages/Protected';
 import Root from './pages/Root';
@@ -9,7 +8,7 @@ import Checkout from './pages/Checkout';
 
 function App() {
 
- 
+
 
 const router = createBrowserRouter(
 createRoutesFromElements(

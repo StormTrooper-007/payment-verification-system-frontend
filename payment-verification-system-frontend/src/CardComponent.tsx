@@ -1,10 +1,13 @@
 import { Button, Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 
+
 type props = {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     element:any
 }
+
+
 
 export default function CardComponent({element}:props) {
     const navigate = useNavigate()
@@ -19,7 +22,7 @@ export default function CardComponent({element}:props) {
       <Typography gutterBottom variant="h5" component="div">
         {element.name}
       </Typography>
-    <div>{element.price} EUR</div>
+    <div>{element.price} EUR </div>
 
     </CardContent>
     <CardActions>
