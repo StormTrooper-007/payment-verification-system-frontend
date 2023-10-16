@@ -1,10 +1,10 @@
 import { Button, Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
+import { Data } from './data'
 
 
 type props = {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    element:any
+    element:Data
 }
 
 

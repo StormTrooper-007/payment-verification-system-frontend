@@ -4,12 +4,10 @@ import Root from './pages/Root';
 import Login from './pages/Login';
 import Home from './pages/Home';
 import Checkout from './pages/Checkout';
+import RegisterPage from './pages/RegisterPage';
 
 
 function App() {
-
-
-
 const router = createBrowserRouter(
 createRoutesFromElements(
   <>
@@ -19,9 +17,11 @@ createRoutesFromElements(
     <Route path="/checkout/:id" element={<Checkout/>}></Route>
      
     </Route>
+  
   </Route>
   <Route>
-    <Route path="/login" element = {<Login/>}></Route>
+    <Route path="/login" element = {<Login />}></Route>
+    <Route path="/register" element = {<RegisterPage />}></Route>
   </Route>
   </>
 )
